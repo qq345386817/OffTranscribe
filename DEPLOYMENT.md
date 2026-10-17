@@ -76,3 +76,12 @@ The built-in Image Gen tool produced the selected compact full-page concept. The
 Intentional deviations: use the existing app icon in the header; replace the concept's Apple logo with a neutral check icon to avoid implying endorsement; expand model facts with real sizes, installation space, support limits and accurate privacy wording; add a policy link. The additional copy makes the page taller than the concept. No material visual defects were left in the inspected views.
 
 The local concept, screenshots and raw checks are kept in the parent project's ignored `.cache/website-release/`, outside this repository and deployment. No models, audio, generated concept images, screenshots, credentials or third-party dependencies are committed.
+
+## Multilingual production verification
+
+- Commits `d508a0b` (11-language implementation) and `7105026` (canonical-host configuration record) pushed separately to `main`. Production now serves the 33-URL sitemap.
+- Build/content/link/schema checks and native catalog parity check passed for all 11 languages.
+- Chrome at 320×740: all 33 pages checked with no horizontal overflow after fixing the waveform grid minimum width. At 390×844, Arabic RTL was visually inspected. Same-page Arabic-to-French privacy navigation and keyboard language navigation passed. Production Japanese page and canonical-host redirect verified in Chrome; no injected analytics scripts found.
+- Google Search Console sitemap re-submitted successfully on October 17; report now shows **33 discovered pages**. This remains discovery evidence, not indexing confirmation.
+- Python urllib HTTP probes were rejected with 403 responses or timed out; these failed probes were retained. A separate curl request for French support returned 200 with security headers. No site security rules were weakened for automated probes.
+- Raw checks/screenshots remain outside this independent repo in the parent ignored `.cache/website-release/`.
