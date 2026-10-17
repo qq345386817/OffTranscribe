@@ -1,5 +1,22 @@
 # Publication record — 2026-10-17
 
+## Multilingual update — October 17, 2026
+
+The site now matches the app's 11 interface locales. All 33 home/support/privacy pages are fully translated, with reciprocal hreflang, matching-page language navigation, localized titles, and Arabic RTL. English remains x-default. The locale checker can verify the native app catalog when its path is supplied.
+
+### Canonical hostname redirect
+
+The original absolute-host `_redirects` declaration did not redirect live Pages requests and was removed. An account-level Bulk Redirect was added to the existing enabled `pages_dev_2_luopeike_com` rule / `tacti_beat` list, preserving its 20 prior entries:
+
+- Source: `offtranscribe.pages.dev/`; target: `https://offtranscribe.luopeike.com/`; status: 301.
+- Preserve query string, subpath matching, preserve path suffix: enabled.
+- Include subdomains: disabled, so preview deployment hosts are outside this requested scope.
+- Live HTTPS `/fr/support/?source=redirect-check` returned 301 to exactly the matching custom-domain URL on October 17.
+
+This setting is managed in Cloudflare, not by the generated site files.
+
+The following sections retain the initial two-language publication evidence. Updated checks and deployment evidence are recorded below after release.
+
 ## Production
 
 - Independent repository: `https://github.com/qq345386817/OffTranscribe`, branch `main`.
