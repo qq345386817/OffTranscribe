@@ -4,7 +4,7 @@ Independent website repository for **OffTranscribe: Speech to Text**. The native
 
 Production domain: **https://offtranscribe.luopeike.com** (DNS is case insensitive).
 
-English and Simplified Chinese: home, support, and privacy policy. Contact: **cameoshell09@gmail.com**. Version 1 is free; the app is not publicly released yet. Do not add a download badge until public availability is verified.
+The website matches all 11 app interface languages: English, Simplified Chinese, Traditional Chinese, Japanese, Korean, French, German, Spanish, Portuguese, Hindi, and Arabic. Each has home, support, and privacy policy pages; Arabic uses RTL. Contact: **cameoshell09@gmail.com**. Version 1 is free; the app is not publicly released yet. Do not add a download badge until public availability is verified.
 
 ## Build and preview
 
@@ -13,10 +13,12 @@ Requires Node 20+, no third-party packages or install step.
 ```sh
 npm run build
 npm run check
+# Optional when checked out beside the native app:
+node scripts/check.mjs ../ios/OfflineTranscribeValidation/Resources/Localizable.xcstrings
 node scripts/serve.mjs
 ```
 
-Content: `src/content.mjs`; renderer: `scripts/build.mjs`; styles and original app icon: `public/assets/`. Output `dist/` is ignored. No models, dependencies, audio, credentials, or generated mockups are committed.
+Content: `src/content.mjs` and `src/locales/`; locale registry: `src/languages.mjs`; renderer: `scripts/build.mjs`; styles and original app icon: `public/assets/`. Output `dist/` is ignored. No models, dependencies, audio, credentials, or generated mockups are committed.
 
 ## Cloudflare Pages
 
@@ -24,8 +26,8 @@ Content: `src/content.mjs`; renderer: `scripts/build.mjs`; styles and original a
 - Framework: None; build command `npm run build`; output directory `dist`; repository root unchanged.
 - Custom domain: `offtranscribe.luopeike.com`.
 - No Pages Functions, analytics beacon, forms, cookies, external fonts, or browser storage.
-- `_headers` supplies security headers; `_redirects` canonicalizes the named Pages production hostname.
-- `404.html` is a real not-found page. Sitemap contains six canonical pages with reciprocal language alternates in HTML.
+- `_headers` supplies security headers. An account-level Cloudflare Bulk Redirect canonicalizes `offtranscribe.pages.dev` to the custom domain, preserving paths and queries; see `DEPLOYMENT.md`.
+- `404.html` is a real not-found page. Sitemap contains 33 canonical pages with reciprocal language alternates in HTML.
 
 For Google Search Console use the URL-prefix property `https://offtranscribe.luopeike.com/`, verify ownership, and submit `sitemap.xml`. Submission is not a promise of indexing. Store the public verification file/tag in `public/` when needed; never commit account credentials.
 

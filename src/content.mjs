@@ -1,3 +1,5 @@
+import { readFile } from 'node:fs/promises';
+import { languages } from './languages.mjs';
 export const origin = 'https://offtranscribe.luopeike.com';
 export const updated = '2026-10-17';
 export const github = 'https://github.com/qq345386817/OffTranscribe';
@@ -108,3 +110,8 @@ export const content = {
     externalPolicies: '相关服务隐私政策：', notFound: '这个页面不存在。', back: '返回 OffTranscribe', footer: '© 2026 OffTranscribe',
   }
 };
+
+for (const language of languages) {
+  if (!content[language.key]) content[language.key] = JSON.parse(await readFile(new URL(`./locales/${language.key}.json`, import.meta.url), 'utf8'));
+  Object.assign(content[language.key], language);
+}
