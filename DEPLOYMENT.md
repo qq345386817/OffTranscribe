@@ -1,5 +1,13 @@
 # Publication record — 2026-10-17
 
+## Repository and sitemap maintenance — October 18, 2026
+
+- Rebuilt and checked all 11 languages / 33 pages, including parity with the native app language catalog.
+- Fetched the live `sitemap.xml`: it is byte-for-byte identical to the generated file and has 33 unique canonical URLs. Live `robots.txt` points to the canonical custom-domain sitemap. One initial TLS probe timed out; the retry succeeded.
+- Refreshed the existing Search Console property: `/sitemap.xml` reports **Success**, **33 discovered pages**, and last read October 17. No URL or sitemap change is required, so no duplicate submission was made. Discovered pages do not prove indexing.
+- The native iOS app and both model asset packs were submitted for App Store review on October 18. Keep the site's pre-release wording and omit public download badges until public availability is verified. The macOS app was not submitted.
+- This maintenance changes documentation only; generated `dist/`, local checks, browser captures, models and dependencies remain untracked. The site is committed and pushed from this independent Git root.
+
 ## Multilingual update — October 17, 2026
 
 The site now matches the app's 11 interface locales. All 33 home/support/privacy pages are fully translated, with reciprocal hreflang, matching-page language navigation, localized titles, and Arabic RTL. English remains x-default. The locale checker can verify the native app catalog when its path is supplied.
