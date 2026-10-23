@@ -4,8 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs"
+    "build": "node scripts/build.mjs && node scripts/check.mjs && node scripts/check-design.mjs",
+    "check": "node scripts/check.mjs && node scripts/check-design.mjs",
+    "preview": "node scripts/serve.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -15,4 +15,4 @@ createServer(async (req, res) => {
     res.writeHead(404, { 'Content-Type':'text/html; charset=utf-8' });
     res.end(await readFile(resolve(root,'404.html')));
   }
-}).listen(4173, '127.0.0.1', () => console.log('Preview http://127.0.0.1:4173'));
+}).listen(Number(process.env.PORT || 4173), '127.0.0.1', () => console.log(`Preview http://127.0.0.1:${process.env.PORT || 4173}`));

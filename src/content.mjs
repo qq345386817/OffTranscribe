@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { languages } from './languages.mjs';
 export const origin = 'https://offtranscribe.luopeike.com';
-export const updated = '2026-10-17';
+export const updated = '2026-10-24';
 export const github = 'https://github.com/qq345386817/OffTranscribe';
 export const supportEmail = 'cameoshell09@gmail.com';
 
