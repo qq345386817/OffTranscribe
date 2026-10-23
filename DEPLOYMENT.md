@@ -18,6 +18,24 @@ Local drafts, raw checks and captures remain in ignored workspace paths. The web
 - The native iOS app and both model asset packs were submitted for App Store review on October 18. Keep the site's pre-release wording and omit public download badges until public availability is verified. The macOS app was not submitted.
 - This maintenance changes documentation only; generated `dist/`, local checks, browser captures, models and dependencies remain untracked. The site is committed and pushed from this independent Git root.
 
+## Website redesign published — October 24, 2026
+
+The `design` and `design-system` workflows produced native-app green/mint foundations, homepage/support drafts, and redesigned home, support and privacy templates in all 11 languages. Production consumes `design-system/tokens.json`; local editable `website-design/` drafts and raw screenshots are ignored. No dependencies, model files, account secrets, or app code were added. Product translations and policy claims remain within the existing release scope.
+
+The website-only commits `5b12374`, `583fbc9`, `1c1ecfb` and `d49dc4e` were pushed to `main`. Cloudflare Pages reported **success** for implementation commit `d49dc4e7b00c4f241eb6203a27d9cecd3dd29bf0`, deployment `2f691fb2-0b97-43c9-a5d2-fd31d606d4fd`. The final documentation-only follow-up does not alter generated HTML or styles.
+
+Verification completed:
+
+- Build/content/link/fragment/schema checks, native-app locale parity, local design-format/token-copy parity and 13 readable color-pair contrast checks passed (minimum 5.33:1). Dedicated `design_check` / `design_system_check` tools were unavailable; official editor-card validation is not claimed.
+- Chrome checked all 33 canonical routes at 320×740 without horizontal overflow, plus desktop pages and Arabic RTL. FAQ expansion, privacy index links, same-page language switching and homepage workflow navigation passed. Narrow-screen language-menu overflow was found and fixed before publication.
+- Initial live visual inspection exposed cached purple CSS mixed with new green HTML. Content-fingerprinted stylesheet URLs fixed this; a normal reload in the **same affected Chrome session** showed the green design and both new stylesheet URLs. Current files are `tokens.8a00dc29c1fd.css` and `style.62a8e2f41417.css`.
+- All 33 live canonical routes returned 200 with correct canonical URLs, expected stylesheet fingerprints and security headers. Two requests timed out initially and passed targeted retries; failed attempts remain in local evidence. The two hashed CSS files, robots.txt and sitemap match local bytes; an unknown path returns 404.
+- Contact pages contain the existing Cloudflare `email-decode.min.js` helper alongside JSON-LD; homepage HTML matches the build exactly, while email-transformed support/privacy HTML is not claimed byte-identical. No analytics script was observed. Chrome confirmed the live support link resolves to `mailto:cameoshell09@gmail.com`. This matches [Cloudflare's documented email-obfuscation behavior](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/); no security settings were changed.
+- `https://offtranscribe.pages.dev/fr/support/?source=redesign-check` returns **301** to exactly `https://offtranscribe.luopeike.com/fr/support/?source=redesign-check`. Earlier probes using the default Python user agent received 403; explicit-user-agent checks passed. These are separate observations, not a confirmed diagnosis of the earlier responses.
+- Sitemap retains the same 33 canonical URLs with the redesign date as lastmod. The existing property and sitemap URL are unchanged; no duplicate GSC property/submission was created and no new indexing claim is made. Public availability of the app was not confirmed, so the site retains pre-release wording without an App Store download badge.
+
+Raw browser/HTTP evidence, retained failed attempts, and before/after cache screenshots are in the parent ignored `.cache/website-redesign-2026-10-24/`. `production-desktop.jpg` shows the corrected live design; `production-mixed-cache-before-fix.jpg` preserves the initial cache defect. Website publication does not upload, submit, withdraw or release the native app.
+
 ## Multilingual update — October 17, 2026
 
 The site now matches the app's 11 interface locales. All 33 home/support/privacy pages are fully translated, with reciprocal hreflang, matching-page language navigation, localized titles, and Arabic RTL. English remains x-default. The locale checker can verify the native app catalog when its path is supplied.
