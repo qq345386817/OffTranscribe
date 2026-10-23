@@ -1,0 +1,14 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {"v": 1, "at": "2026-10-23T18:26:27Z"},
+  "title": "OffTranscribe",
+  "namespace": "OffTranscribe",
+  "libraries": [],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {"readme": "README.md", "sections": []},
+  "lastChange": {"by": "Peike Luo", "at": "2026-10-23T18:26:27Z", "via": "Codex", "note": "Website foundations aligned with the native app accent; original production icon retained, importer unavailable."}
+}
