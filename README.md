@@ -1,5 +1,13 @@
 # OffTranscribe website
 
+## Website design — October 24, 2026
+
+The site now uses green/mint foundations aligned with the native app, a clearer transcript illustration and three-step workflow, a deep-green privacy section, a support contact panel with native FAQs, and a linked privacy-policy index. Existing product translations, policy text, canonical URLs, verification tag and original icon files are retained. There are still 11 languages and 33 canonical pages; no public download badge or unreleased local-AI promotion was added.
+
+`design-system/` is maintained source: 10 colors, 7 type styles, 8 spacing steps, 3 radii, a shadow, brand guidance and a cover. The build generates CSS variables from its tokens, so production and the design foundations share values. Local editable homepage/support drafts use the `design` skill's `canvas.json` / `.dc.html` format in ignored `website-design/`, with an installed token snapshot. The environment did not expose `design_check`, `design_system_check` or their asset importers: official editor-card validation is **not** claimed. `scripts/check-design.mjs` performs local format, token parity and contrast checks instead.
+
+The production build runs content/link/SEO checks and foundation/contrast checks, with no external packages, runtime JavaScript or external fonts. Preview with `npm run preview` or `PORT=4186 npm run preview` if the default port is occupied. Keep screenshots, diagnostics and local design drafts out of Git and deployment. Actual publication status is recorded in DEPLOYMENT.md.
+
 Independent website repository for **OffTranscribe: Speech to Text**. The native app source lives in the parent OfflineTranscribe repository and is not deployed here.
 
 Production domain: **https://offtranscribe.luopeike.com** (DNS is case insensitive).

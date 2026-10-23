@@ -1,5 +1,15 @@
 # Publication record — 2026-10-17
 
+## Website redesign — October 24, 2026
+
+User authorized redesign using the design and design-system skills, followed by direct publication after verification. New foundations and website implementation are ready for the existing Git-integrated Cloudflare Pages project; publication is recorded below after verifying the deployed result.
+
+Local checks completed: 11 languages / 33 canonical pages, native app locale parity, original icon and policy copy retained, matching canonical / hreflang / JSON-LD / verification tag, resource links, fragments, 404 and no executable / tracking scripts. Thirteen specified foreground/background pairs meet at least 4.5:1 (minimum 5.33:1). All 33 routes were observed at 320×740 with no horizontal overflow: 31 through DOM dimensions and two through the documented browser CDP layout metrics. Additional desktop views and Arabic RTL were visually inspected. Native FAQ expansion, privacy section navigation and matching-page language navigation were exercised. A language dropdown that initially overflowed at 320px was corrected by separating it from the translated navigation row.
+
+Browser automation intermittently timed out; failed attempts were not counted as passes. Subsequent fresh-tab and documented layout checks supplied the missing observations. Skill-specific editor check/import tools were unavailable, so no official design-card validation or imported asset library is claimed. The editable draft uses a plain wordmark; the production site retains its original real icon.
+
+Local drafts, raw checks and captures remain in ignored workspace paths. The website keeps its existing 33 URLs; sitemap lastmod advances to October 24 for the redesign. No new Search Console property or duplicate sitemap submission is needed for unchanged URLs, and no new indexing result is claimed. The public Apple US lookup returned zero results on this date; pre-release copy and absence of download badges are retained. This does not establish availability in every storefront.
+
 ## Repository and sitemap maintenance — October 18, 2026
 
 - Rebuilt and checked all 11 languages / 33 pages, including parity with the native app language catalog.
