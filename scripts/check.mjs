@@ -32,6 +32,8 @@ for (const url of urls) {
   assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${route}: one H1`);
   assert.ok(html.includes(`<link rel="canonical" href="${url}">`));
   assert.ok(!html.includes('noindex'));
+  assert.match(html, /href="\/assets\/tokens\.[a-f0-9]{12}\.css"/);
+  assert.match(html, /href="\/assets\/style\.[a-f0-9]{12}\.css"/);
   assert.ok(/<meta name="description" content="[^"]{30,}"/.test(html));
   for (const locale of [...languages.map(l => l.lang), 'x-default']) {
     assert.ok(html.includes(`hreflang="${locale}"`));

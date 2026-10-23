@@ -1,6 +1,7 @@
 import { mkdir, writeFile, readFile, cp, rm } from 'node:fs/promises';
 import { content, origin, updated, github } from '../src/content.mjs';
 import { languages } from '../src/languages.mjs';
+import { createHash } from 'node:crypto';
 
 const out = new URL('../dist/', import.meta.url);
 await rm(out, { recursive: true, force: true });
@@ -20,7 +21,14 @@ for (const group of tokens.type.groups) for (const style of group.styles) {
     if (style[key] !== undefined) rules.push(`--${suffix}-${style.name}:${style[key]}`);
   }
 }
-await writeFile(new URL('assets/tokens.css', out), `/* Generated from design-system/tokens.json. */\n:root{${rules.join(';')}}\n`);
+const tokenCSS = `/* Generated from design-system/tokens.json. */\n:root{${rules.join(';')}}\n`;
+const styleCSS = await readFile(new URL('../public/assets/style.css', import.meta.url), 'utf8');
+const fingerprint = text => createHash('sha256').update(text).digest('hex').slice(0,12);
+const tokenPath = `/assets/tokens.${fingerprint(tokenCSS)}.css`;
+const stylePath = `/assets/style.${fingerprint(styleCSS)}.css`;
+await writeFile(new URL('assets/tokens.css', out), tokenCSS);
+await writeFile(new URL('.' + tokenPath, out), tokenCSS);
+await writeFile(new URL('.' + stylePath, out), styleCSS);
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const pathFor = (locale, page) => `${content[locale].prefix}${page ? `${page}/` : ''}`;
 const icons = {
@@ -47,7 +55,7 @@ function layout(locale, page, body, title, description, noindex = false) {
   const nav = `<a href="${c.prefix}#how-it-works">${c.nav[0]}</a><a href="${c.prefix}support/"${page === 'support' ? ' aria-current="page"' : ''}>${c.nav[1]}</a><a href="${c.prefix}privacy/"${page === 'privacy' ? ' aria-current="page"' : ''}>${c.nav[2]}</a>`;
   const schema = { '@context': 'https://schema.org', '@type': page ? 'WebPage' : 'WebSite', name: title, description, url: canonical, inLanguage: c.lang };
   return `<!doctype html>
-<html lang="${c.lang}" dir="${c.dir || 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="theme-color" content="${tokens.color.tokens.find(t => t.name === 'canvas').value}"><meta name="google-site-verification" content="pv4XuOXnl0JMd90xPgUzJcC5JU2HUZamajjTr78mhSY">${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">${alternate}<link rel="alternate" hreflang="x-default" href="${origin}${pathFor('en', page)}">`}<meta property="og:type" content="website"><meta property="og:site_name" content="OffTranscribe"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${origin}/assets/app-icon.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="1024"><meta name="twitter:card" content="summary"><link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/touch-icon.png"><link rel="stylesheet" href="/assets/tokens.css"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script></head>
+<html lang="${c.lang}" dir="${c.dir || 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="theme-color" content="${tokens.color.tokens.find(t => t.name === 'canvas').value}"><meta name="google-site-verification" content="pv4XuOXnl0JMd90xPgUzJcC5JU2HUZamajjTr78mhSY">${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">${alternate}<link rel="alternate" hreflang="x-default" href="${origin}${pathFor('en', page)}">`}<meta property="og:type" content="website"><meta property="og:site_name" content="OffTranscribe"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${origin}/assets/app-icon.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="1024"><meta name="twitter:card" content="summary"><link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/touch-icon.png"><link rel="stylesheet" href="${tokenPath}"><link rel="stylesheet" href="${stylePath}"><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script></head>
 <body><a class="skip" href="#main">${c.skip}</a><header class="site-header"><div class="wrap header"><a class="brand" href="${c.prefix}"><img src="/assets/favicon.png" alt="" width="32" height="32">OffTranscribe</a><nav aria-label="${c.navigation}">${nav}</nav>${languageMenu}</div></header>${body}<footer class="wrap footer"><div><a class="brand footer-brand" href="${c.prefix}">OffTranscribe</a><p class="footer-formats" dir="ltr">TXT · Markdown · SRT</p></div><nav aria-label="${c.navigation}"><a href="${c.prefix}support/">${c.nav[1]}</a><a href="${c.prefix}privacy/">${c.nav[2]}</a><a href="${github}">GitHub</a></nav><p>${c.footer}</p></footer></body></html>`;
 }
 
