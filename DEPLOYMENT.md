@@ -1,5 +1,9 @@
 # Publication record — 2026-10-17
 
+## Repository publication checks — November 2, 2026
+
+User authorized separate categorized commits/pushes for the native and website repositories. This website's only pending change was the October 29 GSC diagnosis above; publication checks are recorded separately. npm run build passes all 11 languages / 33 canonical pages, content/link/SEO and local design/contrast checks. No website source, sitemap, routing or security settings changed. dist, dependencies and raw browser/network evidence stay ignored; documentation files pass size/credential/gitlink and whitespace checks. Use an ordinary fast-forward push to this repository's origin/main and verify remote HEAD independently of the parent repository. Git publication does not establish a new Cloudflare production deployment or new indexing status.
+
 ## GSC indexing alert — October 29, 2026
 
 The October 26 Search Console notification reports Not Found (404); its sole example is Cloudflare's `/cdn-cgi/l/email-protection` helper, absent from our sitemap. It is not a content page and does not need indexing or a fabricated replacement. Existing email protection remains enabled.
