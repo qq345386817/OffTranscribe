@@ -1,5 +1,13 @@
 # Publication record — 2026-10-17
 
+## GSC indexing alert — October 29, 2026
+
+The October 26 Search Console notification reports Not Found (404); its sole example is Cloudflare's `/cdn-cgi/l/email-protection` helper, absent from our sitemap. It is not a content page and does not need indexing or a fabricated replacement. Existing email protection remains enabled.
+
+The October 23 aggregate report shows 29 indexed and five excluded URLs. Today's URL Inspection already shows the Simplified Chinese and Korean homepages indexed. German and Simplified Chinese privacy pages remain unindexed, but both passed Google's live indexability test; individual indexing requests were accepted into the priority crawl queue. Requests do not prove indexing. Sitemap status is Success, last read October 26, with 33 discovered pages; fetched sitemap bytes match the current build. No duplicate submission or sitemap edits.
+
+Bounded HTTP probes obtained 200, matching canonical and no HTML noindex for 32 of 33 canonical pages across initial and retry observations; Arabic privacy remained a local TLS timeout, not a pass or established origin failure. Pages.dev returned the expected 301 preserving path/query. No source/configuration change, deployment, commit or push; sanitized findings are in the parent project's `validation/runs/2026-10-29/gsc-indexing/RESULTS.md`, with raw evidence in its ignored cache.
+
 ## Website redesign — October 24, 2026
 
 User authorized redesign using the design and design-system skills, followed by direct publication after verification. New foundations and website implementation are ready for the existing Git-integrated Cloudflare Pages project; publication is recorded below after verifying the deployed result.
