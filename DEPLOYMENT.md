@@ -1,5 +1,17 @@
 # Publication record — 2026-10-17
 
+## Saidfolio product and search update — November 7, 2026
+
+This revision aligns all 11 languages / 33 canonical pages with the locally optimized app metadata and current implementation. It publishes the Saidfolio identity, voice-first records, photos and additions, manual notes with eligible-device generation, PDF reports, and optional iCloud copies. The policy distinguishes on-device processing from opt-in storage transfer, retained cloud versions and device-only audio cleanup. The old foreground-only recording statement is corrected with interruption limits.
+
+The app remains pre-release: a fresh ASC readback found only the rejected 1.0 store drafts and internal TestFlight 1.0.0 (18). No public download button, review/rating claim, unconditional AI availability or sync timing guarantee is introduced. The website metadata snapshot is local draft copy; this workflow does not upload it to ASC or change the app.
+
+Before publication, npm build, native-app locale parity and metadata snapshot checks pass. Isolated Chrome tests pass 99 page/viewport cases (1440/390/320), image loading, console health, FAQ expansion, language navigation, Arabic RTL and privacy anchors. The Browser plugin is absent and the CUA Chrome host is unavailable; existing Chrome with a temporary headless profile is used without installing dependencies or accessing the user's browser profile. Raw diagnostics stay out of Git.
+
+Canonical paths, Google verification, the existing Cloudflare Pages project, domain redirect and security settings are retained. The sitemap lastmod changes to November 7 for the changed content. Existing GSC property and sitemap URLs remain valid; no new submission or indexing result is claimed. Google guidance does not require special AI text files or AI-only schema. Software structured data reflects visible text and pre-release status, without fabricated offers, ratings or reviews.
+
+Pages publishes main through the existing Git integration. Independently compare the production `deployment.json` commit and metadataSHA256 with this checkout to establish the live revision; local build or Git push alone is not deployment proof. The parent app's `validation/runs/2026-11-07/website-seo/` records the actual deployment readback and any network failures for this publication.
+
 ## Repository publication checks — November 2, 2026
 
 User authorized separate categorized commits/pushes for the native and website repositories. This website's only pending change was the October 29 GSC diagnosis above; publication checks are recorded separately. npm run build passes all 11 languages / 33 canonical pages, content/link/SEO and local design/contrast checks. No website source, sitemap, routing or security settings changed. dist, dependencies and raw browser/network evidence stay ignored; documentation files pass size/credential/gitlink and whitespace checks. Use an ordinary fast-forward push to this repository's origin/main and verify remote HEAD independently of the parent repository. Git publication does not establish a new Cloudflare production deployment or new indexing status.

@@ -1,0 +1,160 @@
+{
+  "other": "/zh/",
+  "otherLabel": "中文",
+  "nav": [
+    "How it works",
+    "Support",
+    "Privacy"
+  ],
+  "skip": "Skip to content",
+  "title": "Saidfolio — Voice Notes, Photos & On-device Transcription",
+  "description": "Turn recordings into text on your device. Saidfolio uses Apple on-device speech recognition by default, with optional Whisper models. First release is free.",
+  "headline": "Voice notes,<br>with the whole story.",
+  "intro": "Start with your voice. Keep the original audio, transcript, photos and later additions in one record on iPhone, iPad and Mac.",
+  "cta": "See how it works",
+  "availability": "Coming to the App Store · First release is free",
+  "sample": [
+    "Sample transcript",
+    "Good ideas start with a conversation.",
+    "Illustrative preview"
+  ],
+  "steps": [
+    [
+      "Record or import",
+      "Capture audio on your device or import existing recordings."
+    ],
+    [
+      "Transcribe locally",
+      "Convert speech to text using on-device recognition."
+    ],
+    [
+      "Listen, edit, export",
+      "Play back audio with the text, make edits, and export."
+    ]
+  ],
+  "privacyHeading": "Private by design.",
+  "privacyIntro": "Local storage by default. Speech recognition and note generation run on your device; iCloud copies are optional and off until you enable them.",
+  "facts": [
+    [
+      "On-device by default",
+      "Uses Apple’s on-device speech recognition so your audio stays on your device."
+    ],
+    [
+      "Optional Whisper models",
+      "Download Large V3 (3.10 GB) or Large V3 Turbo (1.62 GB). Turbo is experimental; additional free space is needed for installation."
+    ],
+    [
+      "Language resources",
+      "System recognition requires a supported device and language. Apple may need to download language resources first."
+    ],
+    [
+      "Your content stays local",
+      "No app analytics, ads, accounts, or automatic cloud transcription. You choose when to export."
+    ]
+  ],
+  "supportTitle": "A little help, when you need it.",
+  "supportDescription": "Help with Saidfolio voice records, photos, transcription, manual notes, exports and optional iCloud sync on iPhone, iPad and Mac.",
+  "supportLead": "Start with the answers below. If something still isn’t working, email the developer at cameoshell09@gmail.com.",
+  "contact": "Email support",
+  "contactWarning": "Please start with a short description, app version, OS version, and a non-sensitive error category. Do not attach recordings, transcripts, personal names, device identifiers, or private file paths unless you intentionally choose to share them after discussing the request.",
+  "faqs": [
+    [
+      "Is the app available yet? Is it free?",
+      "The first release is being prepared for App Store review and is not publicly available yet. Version 1 will be free, with no subscription, in-app purchase, or trial-minute limit. This describes the first release, not a promise about future versions."
+    ],
+    [
+      "Which devices and languages are supported?",
+      "The app requires iOS/iPadOS 26 or macOS 26 or later. Apple system recognition also depends on the device and selected language. If unavailable, the app explains the limitation rather than silently sending audio to a cloud service. Interface language follows your system’s settings; transcription language is selected separately."
+    ],
+    [
+      "Do I have to download Whisper?",
+      "No. Apple on-device recognition is the default. The first-use prompt can be declined, and optional models can be managed later in Settings → Model management. Apple may still need to prepare system language resources."
+    ],
+    [
+      "How large are the optional models?",
+      "Whisper Large V3 FP16 is about 3.10 GB and Large V3 Turbo FP16 about 1.62 GB before delivery compression. Each downloads separately through Apple’s delivery service. Allow additional free space for download staging and installation. Larger models do not guarantee better results for every language or recording."
+    ],
+    [
+      "How do I delete or download a model again?",
+      "Open Settings → Model management. Whisper models support download, cancel, delete, and re-download. Stop active recording, transcription, or installation first. Deleting a model does not delete your recordings or saved text. Interrupted tasks require the same model version to resume. System speech resources are managed by Apple and cannot be deleted here."
+    ],
+    [
+      "How do I record, review, and export?",
+      "Start a recording or import an audio file, choose the audio language and engine, and start transcription. Keep the app open. Open a completed recording to listen, seek, save a separate edited version, or export TXT, Markdown, or SRT. Review names, numbers, and subtitle timing before sharing."
+    ],
+    [
+      "What happens if I close the app or lock the phone?",
+      "Keep Saidfolio in the foreground for transcription. Saved audio and completed sections support recovery after interruption; do not assume the task will finish while the app is closed or the phone is locked. On iPhone and iPad, recording stops safely when leaving the foreground. On Mac, switching windows can keep work running, while sleep may pause it. Reopen the app and inspect the saved task before resuming."
+    ],
+    [
+      "Can it transcribe while I speak?",
+      "An experimental live-text option works from saved recording pieces and may lag. Temporary text is separate from the final transcript. It is not a guarantee of instant streaming recognition. For reliable delivery, save the recording and review the final transcription."
+    ],
+    [
+      "Why did a download or transcription fail?",
+      "Check the selected language, network availability for resource downloads, and available storage. Prepare the selected engine, keep the app open, then retry the saved task. Turbo is experimental and has known validation limitations. Choose another engine explicitly for a new task if needed; no automatic engine switch occurs."
+    ],
+    [
+      "Where is my data? Can the developer recover it?",
+      "Recordings and text are stored in the app’s local container. There is no developer account or automatic cross-device sync. The developer cannot retrieve local recordings. Your operating system’s backup or your chosen export destination may keep separate copies. Back up important work before deleting the app or recordings."
+    ]
+  ],
+  "policyTitle": "Privacy, in plain language.",
+  "policyDescription": "How Saidfolio handles voice recordings, photos, transcripts, on-device notes and optional iCloud copies, plus model downloads and support.",
+  "policyLead": "Saidfolio: Voice Notes is developed by LuoPK. Transcription and note generation run on your device. Records are local by default; you can explicitly enable copies through your own iCloud account. This policy also covers model delivery, website hosting and support.",
+  "effective": "Last updated: November 7, 2026",
+  "policy": [
+    [
+      "Recordings and transcripts",
+      "Audio, original transcripts, edits, and task checkpoints are saved in the app’s local storage. Saidfolio does not automatically upload this content to the developer or a transcription server. There is no account system or automatic app-level cloud sync."
+    ],
+    [
+      "Speech recognition and model downloads",
+      "Apple SpeechAnalyzer / SpeechTranscriber provides the default on-device recognition. Apple may download or update language resources. Optional Whisper Large V3 and Large V3 Turbo models use Apple-hosted Background Assets and run locally after installation. Resource downloads involve Apple network services, but are not audio or transcript uploads. Device or language limitations do not trigger a silent cloud fallback."
+    ],
+    [
+      "Permissions",
+      "Microphone access is requested when you choose to record. Audio files are accessed when you explicitly select them through the system file picker. You can manage microphone permission in system settings. Denying permission does not authorize background recording."
+    ],
+    [
+      "Analytics, advertising, and diagnostics",
+      "The first release has no app analytics SDK, advertising, tracking identifier, installation identifier, or third-party crash-reporting SDK. Saidfolio does not automatically send app diagnostics to the developer. Apple may separately process information through its platform services under your system settings and Apple’s policies."
+    ],
+    [
+      "Exports, backups, and deletion",
+      "Exports go to the destination you choose in the system sharing or file interface; that destination has its own data practices. Operating-system backups may contain app data depending on your settings. Delete recordings and optional Whisper models using the app’s controls; deleting a model does not delete saved recordings or text. Copies in backups or export destinations must be managed separately. The developer cannot remotely access, restore, or erase your local content."
+    ],
+    [
+      "Purchases",
+      "Version 1 is free and does not offer subscriptions or in-app purchases. If a future version changes this, the app and this policy will explain the applicable purchase flow before it is introduced."
+    ],
+    [
+      "This website",
+      "This static website is hosted on Cloudflare Pages. We do not add advertising trackers, analytics scripts, cookies, forms, or browser storage. Hosting and security services may process technical request information such as IP addresses, request URLs, and browser headers to deliver and protect the site. Google Search Console is used to manage search visibility and does not add a tracking script to your visit. Cloudflare’s privacy policy applies to its processing."
+    ],
+    [
+      "Support requests and external links",
+      "If you email cameoshell09@gmail.com, we receive the email address, message, and any attachments you choose to send. They are used to respond to your request, not for advertising. Do not send recordings or transcripts by default. Email is handled through Google’s mail service under its own policies. Support messages are retained only as needed to resolve and follow up on the request or meet applicable obligations; you can request deletion by email. If you follow links to GitHub, its policies apply, and public issues can be read by others."
+    ],
+    [
+      "Children and policy changes",
+      "Saidfolio has no account registration or advertising profiles for children. This website is not designed to solicit children’s personal information. We will update this page if the app’s data practices change. Changes will show a revised date; materially different collection will be explained before it starts."
+    ],
+    [
+      "Contact",
+      "For privacy questions, contact LuoPK through the support page. Describe the question without attaching private recordings or transcripts."
+    ]
+  ],
+  "externalPolicies": "Service privacy policies:",
+  "notFound": "This page isn’t here.",
+  "back": "Back to Saidfolio",
+  "footer": "© 2026 Saidfolio",
+  "questionsHeading": "Questions about your records",
+  "notesQuestion": "Do I need Apple Intelligence to organize my notes?",
+  "syncQuestion": "Can I sync records between iPhone, iPad and Mac?",
+  "cloudHeading": "Optional iCloud sync",
+  "notesHeading": "Manual and on-device notes",
+  "cloudPolicy": "Enable sync on each device in Settings using the same iCloud account and iCloud Drive. Saved audio, photos, transcripts, drafts, notes and record organization can use your iCloud storage. Changes transfer when iCloud is available; completion in the background or by a fixed deadline is not guaranteed. Account changes stop sync until you enable it again. Turning sync off keeps local and existing cloud copies. Deletion and restore markers sync; clearing local audio affects only that device. Cloud revision history is currently retained, and the app has no control to purge that history. Manage account storage and backups separately in Apple settings. The developer does not receive these records on a developer server; iCloud protection depends on Apple services and your account settings.",
+  "photoPermission": "On iPhone and iPad, camera access is requested only when you choose to take a photo. The system photo picker provides the photos you select to attach to a record.",
+  "backgroundAnswer": "On iPhone and iPad, a recording you start can continue while the screen is locked or the app is in the background. Audio-device changes, calls or system interruptions may stop it; check the saved audio before relying on it. Keep the app open for transcription; saved sections can be resumed after interruption. On Mac, switching windows can keep work running, while sleep may pause it."
+}

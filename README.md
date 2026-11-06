@@ -1,4 +1,25 @@
-# OffTranscribe website
+# Saidfolio website
+
+## Product and search content — November 7, 2026
+
+The site describes Saidfolio as voice-first records: original audio, transcripts, photos and later additions belong together. The 11-language home/support/privacy content now covers manual organization on all devices, optional on-device generation on eligible devices, PDF record reports, and opt-in iCloud copies. Recording can continue under the iPhone/iPad lock screen, with interruption limitations; transcription still requires the app open. The App Store release remains pending; internal TestFlight availability is not advertised as a public download.
+
+`src/app-metadata.json` snapshots the locally optimized iOS/macOS Fastlane name, subtitle, promotional text and description in all 11 languages. Functional paragraphs used by the site come from that snapshot; website-specific headlines and policy details live in `src/locales/`. It records local draft copy, not an ASC upload. The standalone Pages build does not access the native repository, credentials or private app data.
+
+Run these explicit, read-only-to-the-app operations from the website checkout when app metadata changes:
+
+```sh
+node scripts/sync-app-metadata.mjs ..
+node scripts/sync-app-metadata.mjs .. --check
+npm run build
+node scripts/check.mjs ../ios/OfflineTranscribeValidation/Resources/Localizable.xcstrings
+```
+
+Keep the 33 canonical URLs and Google verification tag. The sitemap content date is November 7, 2026. Homepage structured data describes the same visible app features and pre-release state, without invented ratings, reviews or download offers. Native FAQs provide direct answers; no AI ranking or rich-result eligibility is claimed. Google states that its AI search features use the same SEO foundations and require no special AI text files or schema: [official guidance](https://developers.google.com/search/docs/appearance/ai-features).
+
+`deployment.json` exposes the deployed website commit and metadata fingerprint for independent readback. Build output, browser profiles, raw diagnostics and screenshots stay outside Git. Existing design tokens and icon files are preserved. Publication is recorded in DEPLOYMENT.md.
+
+2026-11-04: Brand copy now uses **Saidfolio: Voice Notes**. This local update preserves all existing production URLs, verification tags and privacy behavior; it has not been deployed.
 
 ## Website design — October 24, 2026
 
@@ -8,7 +29,7 @@ The site now uses green/mint foundations aligned with the native app, a clearer 
 
 The production build runs content/link/SEO checks and foundation/contrast checks, with no external packages, application JavaScript or external fonts. Cloudflare may add its existing email-obfuscation helper on contact pages; it is not an application framework or analytics beacon. CSS URLs include content fingerprints to prevent old cached styles from mixing with new HTML. Preview with `npm run preview` or `PORT=4186 npm run preview` if the default port is occupied. Keep screenshots, diagnostics and local design drafts out of Git and deployment. Actual publication status is recorded in DEPLOYMENT.md.
 
-Independent website repository for **OffTranscribe: Speech to Text**. The native app source lives in the parent OfflineTranscribe repository and is not deployed here.
+Independent website repository for **Saidfolio: Voice Notes**. The native app source lives in the parent OfflineTranscribe repository and is not deployed here.
 
 Production domain: **https://offtranscribe.luopeike.com** (DNS is case insensitive).
 

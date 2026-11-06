@@ -19,7 +19,7 @@ for (const language of languages) {
   for (const field of ['title','description','headline','intro','cta','availability','privacyHeading','privacyIntro','supportTitle','supportDescription','supportLead','contact','contactWarning','policyTitle','policyDescription','policyLead','effective','externalPolicies']) {
     assert.ok(typeof c[field] === 'string' && c[field].trim(), `${language.key}: ${field}`);
   }
-  for (const [field, count] of [['nav',3],['sample',3],['steps',3],['facts',4],['faqs',10],['policy',10]]) {
+  for (const [field, count] of [['nav',3],['sample',3],['steps',3],['facts',4],['faqs',12],['policy',12]]) {
     assert.equal(c[field].length, count, `${language.key}: ${field} count`);
     assert.ok(c[field].flat().every(text => typeof text === 'string' && text.trim()));
   }
@@ -42,7 +42,19 @@ for (const url of urls) {
   assert.ok(html.includes(`lang="${language.lang}" dir="${language.dir || 'ltr'}"`));
   assert.ok(html.includes('name="google-site-verification"'));
   const schema = html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/);
-  assert.equal(JSON.parse(schema[1]).url, url);
+  const structured = JSON.parse(schema[1]);
+  assert.equal(structured.url, url);
+  if (route === language.prefix) {
+    assert.equal(structured.mainEntity.name, content[language.key].appName);
+    assert.equal(structured.mainEntity['@id'], `${origin}/#app`);
+    assert.equal(structured.mainEntity.creativeWorkStatus, 'PreRelease');
+    assert.ok(!structured.mainEntity.offers && !structured.mainEntity.aggregateRating && !structured.mainEntity.downloadUrl);
+    for (const feature of structured.mainEntity.featureList) assert.ok(html.includes(feature.replaceAll('&','&amp;')), `${route}: structured feature must be visible`);
+    assert.ok(html.includes('questions-heading'));
+  }
+  if (route.includes('privacy/')) {
+    for (const id of ['policy-icloud','policy-notes',...Array.from({length:10},(_,i)=>`policy-${i+1}`)]) assert.ok(html.includes(`id="${id}"`));
+  }
   assert.equal((html.match(/<script/g) || []).length, 1, 'No executable or analytics script');
   for (const match of html.matchAll(/(?:href|src)="(\/[^"#]*)(?:#[^"]*)?"/g)) {
     const path = match[1];
