@@ -1,4 +1,4 @@
-# OffTranscribe
+# Saidfolio
 
 Quiet, readable tools for turning a conversation into something useful. This website system aligns with the native app's green accent while preserving its actual icon and international, local-first positioning. It is a new website direction, not a full export of the native UI or a third-party component library.
 
@@ -18,7 +18,7 @@ Spacing follows the 4px grid: `space-4` for compact insets, `space-6` and `space
 
 Reuse the website's original app PNG files unchanged in production. New diagrams use inline, decorative, 1.6px stroke SVG microphone, document, waveform, shield and arrow symbols. Arrows mirror with reading direction; time codes and format abbreviations remain LTR. Do not imitate Apple's badges or imply endorsement.
 
-The skill's asset importer is unavailable in this environment, so the icon is not copied into this design system's asset library. The editable design boards use the plain OffTranscribe wordmark rather than a replacement logo. No font files are required: this system uses operating-system fonts and makes no external font requests.
+The skill's asset importer is unavailable in this environment, so the icon is not copied into this design system's asset library. The editable design boards use the plain Saidfolio wordmark rather than a replacement logo. No font files are required: this system uses operating-system fonts and makes no external font requests.
 
 ## Inventory and consumption
 
