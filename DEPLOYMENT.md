@@ -1,5 +1,13 @@
 # Publication record — 2026-10-17
 
+## Bing Webmaster Tools — November 9, 2026 (UTC+8)
+
+Added and verified the canonical property `https://offtranscribe.luopeike.com/` in the existing Bing account, then submitted `https://offtranscribe.luopeike.com/sitemap.xml`. Final Bing readback shows one known sitemap, **Processing**, no reported errors or warnings, and no discovered URLs yet. The file contains 33 canonical URLs across 11 languages; submission is not an indexing result. Bing displays the submit date as November 8 in its UI; the local action date is November 9.
+
+Source commit `c0b8e7c9ae5d8d4a9ebc7e2b132870ff450cee0a` adds the public `msvalidate.01` marker. The existing Pages Git workflow deployed it; the production homepage contains the marker and `deployment.json` matches the commit. Build/content/design checks pass, both ownership markers are present in all 33 generated page heads, and live sitemap bytes match the output. Canonical paths, sitemap content date, Google verification and app metadata fingerprint are unchanged.
+
+Bing's HTML verification twice returned “Body tag not found” despite a successful independent read of the live head/body and marker. DNS verification then succeeded using only this dedicated **DNS-only** CNAME: `a51db47451ff74d69ae6f5fbe17c1c73.offtranscribe.luopeike.com` → `verify.bing.com`. Public DNS readback confirms the target. Retain this record and the public marker; do not replace the existing website CNAME. No Google account access, Clarity, IndexNow or security-rule change was needed. Initial local TLS/partial-read failures and successful targeted retries are distinguished in the parent project's `validation/runs/2026-11-09/bing-webmasters/`.
+
 ## Saidfolio product and search update — November 7, 2026
 
 This revision aligns all 11 languages / 33 canonical pages with the locally optimized app metadata and current implementation. It publishes the Saidfolio identity, voice-first records, photos and additions, manual notes with eligible-device generation, PDF reports, and optional iCloud copies. The policy distinguishes on-device processing from opt-in storage transfer, retained cloud versions and device-only audio cleanup. The old foreground-only recording statement is corrected with interruption limits.
