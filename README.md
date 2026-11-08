@@ -19,8 +19,6 @@ Keep the 33 canonical URLs and Google verification tag. The sitemap content date
 
 `deployment.json` exposes the deployed website commit and metadata fingerprint for independent readback. Build output, browser profiles, raw diagnostics and screenshots stay outside Git. Existing design tokens and icon files are preserved. Publication is recorded in DEPLOYMENT.md.
 
-2026-11-04: Brand copy now uses **Saidfolio: Voice Notes**. This local update preserves all existing production URLs, verification tags and privacy behavior; it has not been deployed.
-
 ## Website design — October 24, 2026
 
 The site now uses green/mint foundations aligned with the native app, a clearer transcript illustration and three-step workflow, a deep-green privacy section, a support contact panel with native FAQs, and a linked privacy-policy index. Existing product translations, policy text, canonical URLs, verification tag and original icon files are retained. There are still 11 languages and 33 canonical pages; no public download badge or unreleased local-AI promotion was added.
