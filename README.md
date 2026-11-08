@@ -15,7 +15,7 @@ npm run build
 node scripts/check.mjs ../ios/OfflineTranscribeValidation/Resources/Localizable.xcstrings
 ```
 
-Keep the 33 canonical URLs and Google verification tag. The sitemap content date is November 7, 2026. Homepage structured data describes the same visible app features and pre-release state, without invented ratings, reviews or download offers. Native FAQs provide direct answers; no AI ranking or rich-result eligibility is claimed. Google states that its AI search features use the same SEO foundations and require no special AI text files or schema: [official guidance](https://developers.google.com/search/docs/appearance/ai-features).
+Keep the 33 canonical URLs and Google/Bing verification tags. The sitemap content date is November 7, 2026. Homepage structured data describes the same visible app features and pre-release state, without invented ratings, reviews or download offers. Native FAQs provide direct answers; no AI ranking or rich-result eligibility is claimed. Google states that its AI search features use the same SEO foundations and require no special AI text files or schema: [official guidance](https://developers.google.com/search/docs/appearance/ai-features).
 
 `deployment.json` exposes the deployed website commit and metadata fingerprint for independent readback. Build output, browser profiles, raw diagnostics and screenshots stay outside Git. Existing design tokens and icon files are preserved. Publication is recorded in DEPLOYMENT.md.
 
@@ -57,6 +57,8 @@ Content: `src/content.mjs` and `src/locales/`; locale registry: `src/languages.m
 - `404.html` is a real not-found page. Sitemap contains 33 canonical pages with reciprocal language alternates in HTML.
 
 For Google Search Console use the URL-prefix property `https://offtranscribe.luopeike.com/`, verify ownership, and submit `sitemap.xml`. Submission is not a promise of indexing. Store the public verification file/tag in `public/` when needed; never commit account credentials.
+
+For Bing Webmaster Tools use the same canonical property and `https://offtranscribe.luopeike.com/sitemap.xml`. The renderer includes the public `msvalidate.01` ownership tag in the HTML head; retain it after verification. This does not require linking the Google account or granting access to other Search Console properties. Bing submission and indexing results are recorded separately in DEPLOYMENT.md.
 
 ## Publication checks
 
